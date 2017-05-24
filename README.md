@@ -20,5 +20,11 @@ npm run build
 
 然后复制dist下所有文件到esap目录
 
+## 截图
+![](./src/screenshot/p1.png)
+![](./src/screenshot/p2.png)
+![](./src/screenshot/p3.png)
+![](./src/screenshot/p4.png)
+
 ## License
 MIT
