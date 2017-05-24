@@ -1,4 +1,5 @@
 # esap-app
+[![Build Status](https://travis-ci.org/esap/app.svg?branch=master)](https://travis-ci.org/esap/app)
 
 ## 安装调试
 
