@@ -16,6 +16,10 @@ const  routes= [
   { path: '/wxfkr/:id', component:require('@/components/wxfk/wxfkR') },
   { path: '/wxfkc', component:require('@/components/wxfk/wxfkC') },
 
+  { path: '/cgddl', component:require('@/components/cgdd/cgddL') },
+  { path: '/cgddr/:id', component:require('@/components/cgdd/cgddR') },
+  { path: '/cgddc', component:require('@/components/cgdd/cgddC') },
+
   { path: '/me', component:require('@/components/me') },
   { path: '*', redirect: '/home' }
   ]

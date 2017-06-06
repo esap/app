@@ -59,6 +59,7 @@ export default {
 		}],
 		hd: [
 		  { path: "xjdd", name: "新建订单", nav: "article" },
+		  { path: "cgddl", name: "采购订单", nav: "panel" },
 		  { path: "jcmx", name: "进出明细", nav: "tab" },
 		  { path: "eskc", name: "库存查询", nav: "search_bar" },
 		  { path: "ddjd", name: "订单进度", nav: "progress" },

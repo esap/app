@@ -101,13 +101,13 @@ export default {
 		},
 		fresh(id){
 			this.$http.get(this.$store.state.apiPath+'wxfkD?pid=' + id)
-			.then(r => { this.result=r.data })
+			.then(r => { if (r.data.result) this.result=r.data.data[0] })
 			.catch(e => { console.log(e) })
 		},
 		fetchData(){
 			this.id=this.$route.params.id
 			this.$http.get(this.$store.state.apiPath+'wxfk?id=' + this.id)
-			.then(r => { this.tid=r.data[0] })
+			.then(r => { if (r.data.result) this.tid=r.data.data[0][0] })
 			.catch(e => { console.log(e) })
 		}
 	},

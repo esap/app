@@ -2,20 +2,20 @@
 <div>
 	<!-- 导航头 -->
 	<x-header>
-	  <span>反馈列表</span>
-	  <router-link to="/wxfkc" slot="right">+新建</router-link>
+	  <span>采购订单列表</span>
+	  <router-link to="/cgddc" slot="right">+新建</router-link>
 	</x-header>
 	<!-- 搜索 -->
 	<search v-model="txt" @on-change="getdata" placeholder="搜索关键字"></search>
 
 	<group :title="'共查到'+list.length+'条记录'">
-	  <cell v-for="v in list" :link="'/wxfkr/'+v.id" is-link>
-		<span slot="icon" class="tzfl">{{v.id}}</span>
+	  <cell v-for="v in list" :link="'/cgddr/'+v.号" is-link>
+		<span slot="icon" class="type-pink">{{v.号}}</span>
 		<div slot="after-title" class="nb">
-	        <span>{{v.contxt}}</span>
-		    <div class="lastRe">日期：{{v.cDate}}</div>
+	        <span>{{v.供方}}</span>
+		    <div class="lastRe">日期：{{v.日期}}</div>
 	    </div>
-	    <span slot="value" class="iqty">{{v.rel}}</span>
+	    <span slot="value" class="iqty">{{v.需代表}}</span>
 	  </cell>
 	</group>
 </div>
@@ -27,16 +27,14 @@ export default {
   components: {	XHeader, Search, Group, Cell },
   data () {
     return {
-        tid: {},
 		txt: '',
 		list: [],
     }
   },
   methods: {
   	getdata: debounce(function() {
-		// if (!this.txt) return
-		this.$http.get(this.$store.state.apiPath+'wxfkl?s=' + this.txt+'&w=contxt&o=cdate desc')
-		.then(r => { if (r.data.result) this.list=r.data.data[0] })
+		this.$http.get(this.$store.state.apiPath+'all?a=订&w=类&s=采购' + this.txt+'&w=contxt&o=日期 desc')
+		.then(r => { if(r.data.result) this.list=r.data.data[0] })
 		.catch(e => { console.log(e) })
 	},500),
   },

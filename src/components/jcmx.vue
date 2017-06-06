@@ -49,9 +49,7 @@ export default {
 	getInfo(v) {
 		this.show1=true
 		this.$http.get(this.$store.state.apiPath+"vIO")
-		.then(r=> {
-			this.list=r.data
-		})
+		.then(r=> {	if (r.data.result) this.list=r.data.data[0]	})
 		.catch(e => { console.log(e) })	
 	},	
   },

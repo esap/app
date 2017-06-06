@@ -70,7 +70,7 @@ export default {
 		this.$http.post(this.$store.state.esPath+"SD_销售订单", this.list)
 		.then(r=> {			
 			this.done = true
-			if (r.data){
+			if (r.data.result){
 				this.$vux.toast.show({ text: '提交成功', type: 'success', time: 2000 })
 			} else {
 				this.$vux.toast.show({ text: '提交失败'+r.data.errmsg, type: 'cancel', time: 2000 })

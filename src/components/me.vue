@@ -9,6 +9,7 @@
     </cell> 
     <cell title="账号" :value="userId"></cell>    
     <cell title="用户名" :value="userName"></cell>
+	<cell title="部门" :value="dept"></cell>
     <!-- <mt-button @click.native="showMetheName">showMetheName</mt-button> -->
     <!-- <mt-button @click.native="setCookie">setCookie</mt-button> -->
     <!-- <mt-button @click.native="clearCookies">clearCookie</mt-button> -->
@@ -44,15 +45,10 @@ export default {
   logined(){
     return (this.userId != '' || this.userId==undefined) ? true : false
   },
-	userId(){
-		return this.$cookie.get("esap_user") || ''
-	},
-	avatar(){
-		return this.$cookie.get("esap_avatar") || ''
-	},
-	userName(){
-    return decodeURI(this.$cookie.get("esap_username") || '') 
-	},
+  userId(){ return this.$cookie.get("esap_user") || '' },
+  avatar(){ return this.$cookie.get("esap_avatar") || '' },
+  userName(){ return decodeURI(this.$cookie.get("esap_username") || '')  },
+  dept(){ return decodeURI(this.$cookie.get("esap_userdept") || '')  },
   },
   methods: {
     bindWx() {
