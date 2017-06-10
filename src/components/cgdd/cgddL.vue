@@ -34,7 +34,7 @@ export default {
   methods: {
   	getdata: debounce(function() {
 		this.$http.get(this.$store.state.apiPath+'all?a=订&w=类&s=采购' + this.txt+'&w=contxt&o=日期 desc')
-		.then(r => { if(r.data.result) this.list=r.data.data[0] })
+		.then(r => { if(r.data.length) this.list=r.data })
 		.catch(e => { console.log(e) })
 	},500),
   },
@@ -43,35 +43,3 @@ export default {
   }
 }
 </script>
-
-<style lang="stylus" scoped>
-.mtpop 
-	width: 100vw
-	height:100vh
-	overflow:auto
-.clsbtn 
-	position: absolute
-	opacity: 0.4
-	bottom: 1em
-	right: 1em
-.nb
-	&div,span 
-		font-size: 13px
-	&.rem 
-		color: #669
-.iqty
-	color: #00e
-	font-size: 14px
-.tzfl
-	float:left
-	display:block
-	width: 2.2em
-	color: #fff
-	padding: 1px
-	border-radius: 3px	
-	font-size: 10px
-	background-color: #669
-.lastRe
-	font-size: 10px
-	color: #999
-</style>

@@ -23,7 +23,6 @@ export default {
   components: {	XHeader, Search, Group, Cell },
   data () {
     return {     
-    	popupVisible: false,
 		txt: "",
 		list: [],
 		showData: {}
@@ -38,7 +37,6 @@ export default {
 	},500),
 	getMsg(v) {
 		this.showData = v
-        this.popupVisible = true;
 	},
   },
 }

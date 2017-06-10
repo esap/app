@@ -11,6 +11,7 @@ const  routes= [
   { path: '/jcmx', component:require('@/components/jcmx') },
   { path: '/xjdd', component:require('@/components/xjdd') },
   { path: '/eskc', component:require('@/components/eskc') },
+  { path: '/dbsy', component:require('@/components/dbsy') },
 
   { path: '/wxfkl', component:require('@/components/wxfk/wxfkL') },
   { path: '/wxfkr/:id', component:require('@/components/wxfk/wxfkR') },

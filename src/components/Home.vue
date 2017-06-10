@@ -22,9 +22,9 @@
 	    <img slot="icon" src="../assets/icon_nav_button.png">
 	    <span slot="label">首页</span>
 	  </tabbar-item>
-	  <tabbar-item show-dot>
+	  <tabbar-item :badge="String(cnt)" link="/dbsy">
 	    <img slot="icon" src="../assets/icon_nav_msg.png">
-	    <span slot="label">信息</span>
+	    <span slot="label">待办</span>
 	  </tabbar-item>
 	  <tabbar-item link="https://esap.erp8.net">
 	    <img slot="icon" src="../assets/icon_nav_article.png">
@@ -66,7 +66,8 @@ export default {
 		  { path: "wxfkl", name: "意见反馈", nav: "dialog" },
 		  { path: "/", name: "尚未开放", nav: "actionSheet" },
 		  { path: "/", name: "尚未开放", nav: "actionSheet" },
-		]
+		],
+		cnt:0
     }
   },
   computed:{
@@ -77,7 +78,15 @@ export default {
   methods: {
 	picPath(v){
 		return require('../assets/icon_nav_' + v.nav + '.png')
+	},
+	getCnt() {
+		this.$http.get(this.$store.state.apiPath+'dbsyCnt')
+		.then(r => { this.cnt=r.data[0].cnt })
+		.catch(e => { console.log(e) })
 	}
+  },
+  activated() {
+  	this.getCnt()
   }
 }
 </script>

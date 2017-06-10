@@ -44,3 +44,12 @@
 .inline {
 	display: inline;
 }
+
+.iqty {	
+	color: #00e;
+	font-size: 14px;
+}
+.lastRe {	
+	font-size: 10px;
+	color: #999;
+}

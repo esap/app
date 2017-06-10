@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import { Picker, Cell, XHeader, XInput, XButton, Group, Loading, cookie } from 'vux'
+import { Picker, Cell, XHeader, XInput, XButton, Group, Loading } from 'vux'
 import md5 from 'md5'
 import footbar from './common/footbar'
 export default {
@@ -61,8 +61,8 @@ export default {
       this.$http.post(apiUrl, this.form)
       .then(r => {
         if (r.data.result) { 
-          cookie.set("esap_user", r.data.msg[0].userlogin)
-          cookie.set("esap_username", r.data.msg[0].dispName)
+          this.$cookie.set("esap_user", r.data.msg[0].userlogin)
+          this.$cookie.set("esap_username", r.data.msg[0].dispName)
           window.location.href="/me"
         } else {
           this.$vux.toast.show({ text: '绑定失败,'+r.data.errmsg, type: 'cancel', time: 2000 })
@@ -86,7 +86,7 @@ export default {
 		var keys=document.cookie.match(/[^ =;]+(?=\=)/g)
 	    if (keys) {
 	        for (var i =  keys.length; i--;)
-	            this.$cookie.delete(keys[i])
+	            this.$cookie.remove(keys[i])
 	    }  
 	},
 	showMetheName() {

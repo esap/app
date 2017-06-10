@@ -6,6 +6,7 @@
   <group :title="'隐私--'+userName">
         <x-switch title="公开" v-model="list.pub"></x-switch>
   </group>
+
   <group title="意见">   
     <x-textarea title="内容" placeholder="请输入意见内容" v-model="list.contxt" :max="200"></x-textarea>
 
@@ -34,7 +35,6 @@ export default {
   data() {
     return {
   		list: {contxt: "", pub:false,rel:'',files:''},
-  		submit: false,
       images:[],
   		done: false
     }
@@ -46,14 +46,16 @@ export default {
   },
   methods: {
   	sbmt() {
-  		this.submit = true
-  		this.list['rel']=this.$cookie.get('esap_username')
       this.list['files']=(this.images.length>0 ? this.images[0].url : '' ) 
   		this.$http.post(this.$store.state.esPath+"微信反馈", this.list)
-      .then(r=> {					
-  			this.done = true
-  			this.$vux.toast.show({ text: '提交成功', type: 'success', time: 2000 })
-  			setTimeout(() => { this.$router.push("/wxfkl"); }, 2000)
+      .then(r=> {
+        if (r.data.result) {          
+          this.done = true
+          this.$vux.toast.show({ text: '提交成功', type: 'success', time: 2000 })
+          setTimeout(() => { this.$router.push("/wxfkl"); }, 2000)
+        } else {
+          this.$vux.toast.show({ text: '提交失败:'+r.data.errmsg, type: 'cancel', time: 2000 })
+        }			
   		})
       .catch(e => { console.log(e) });			
   	}
@@ -61,7 +63,6 @@ export default {
   activated(){
   	this.list= {contxt: "", pub:false,rel:'',files:''},
     this.images=[],
-  	this.submit=false;
   	this.done=false
   }
 }

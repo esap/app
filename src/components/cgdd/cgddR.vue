@@ -4,17 +4,17 @@
 	<x-header>采购订单详情</x-header>
 
 	<group title="主表">
-	   <cell title="供应商">{{form.供方}}</cell>
+	  <cell title="供应商">{{form.供方}}</cell>
 	  <cell title="签订日期">
 		<div slot="after-title">{{form.日期}}</div>
-	    <span class="lastRe">{{ form.需代表 }}</span>	
+	    {{ form.需代表 }}	
 	  </cell>
 	</group>
-
-	<group title="明细" v-if="data.length>0">
-	  <cell v-for="v in data" :title="v.品名">
+	
+	<group title="明细" v-if="list.length>0">
+	  <cell v-for="v in list" :title="v.品名">
 		<span slot="icon" class="type-pink">{{ v.单位 }}</span>
-		<div slot="after-title">{{v.品}}</div>
+		<span slot="after-title">{{v.品}}</span>
 	    <span class="contxt">{{ v.数 }}</span>
 	  </cell>
 	</group>
@@ -28,21 +28,19 @@ export default {
 	data() {
 		return {
 			form: {需代表:'',供方:'',日期:''},
-			data: [],
+			list: [],
 		}
 	},
 	computed:{
-		id(){
-			return this.$route.params.id
-		}
+		id(){ return this.$route.params.id }
 	},
 	methods: {
 		fetchData(){
-			this.$http.get(this.$store.state.apiPath+'app.采购订单?id=' + this.id)
+			this.$http.get(this.$store.state.api2Path+'app.采购订单?id=' + this.id)
 			.then(r => { 
 				if (r.data.result){
 					this.form=r.data.data[0][0]
-					this.data=r.data.data[1]
+					this.list=r.data.data[1]
 				}
 			})
 			.catch(e => { console.log(e) })
