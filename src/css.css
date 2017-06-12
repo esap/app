@@ -53,3 +53,32 @@
 	font-size: 10px;
 	color: #999;
 }
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+}
+.fade-enter, .fade-leave-active {
+    opacity: 0;
+}
+.fade-choose-enter-active, .fade-choose-leave-active {
+    transition: opacity .5s;
+}
+.fade-choose-leave, .fade-choose-leave-active {
+    display: none;
+}
+.fade-choose-enter, .fade-choose-leave-active {
+    opacity: 0;
+}
+.router-slid-enter-active, .router-slid-leave-active {
+    transition: all .4s;
+}
+.router-slid-enter, .router-slid-leave-active {
+    transform: translateX(1rem);
+    opacity: 0;
+}
+.toggle-cart-enter-active, .toggle-cart-leave-active {
+    transition: all .3s ease-out;
+}
+.toggle-cart-enter, .toggle-cart-leave-active {
+    transform: translateY(100%);
+}

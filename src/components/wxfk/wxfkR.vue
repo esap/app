@@ -5,10 +5,10 @@
 	<!-- 楼主部分	 -->
 	<group title="发起人">
 	  <cell :title="list.contxt">
-        <span slot="icon" class="inline-block mtitle">
+        <div slot="icon" class="mtitle">
 		  <div class="avatar">{{ list.rel }}</div>
 		  <span class="lastRe">{{ list.cDate }}</span>
-		</span>
+		</div>
 	      <a slot="after-title" v-if="list.files" class="attachFile" :href="list.files" target="_blank">反馈附件:点击查看</a>
 	  </cell>
 	</group>

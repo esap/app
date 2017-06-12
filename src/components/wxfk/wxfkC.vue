@@ -4,7 +4,7 @@
   <x-header>意见反馈</x-header>
 
   <group :title="'隐私--'+userName">
-        <x-switch title="公开" v-model="list.pub"></x-switch>
+    <x-switch title="公开" v-model="list.pub"></x-switch>
   </group>
 
   <group title="意见">   
@@ -61,7 +61,7 @@ export default {
   	}
   },
   activated(){
-  	this.list= {contxt: "", pub:false,rel:'',files:''},
+  	this.list= {contxt: "", pub:false, rel:'', files:''},
     this.images=[],
   	this.done=false
   }
