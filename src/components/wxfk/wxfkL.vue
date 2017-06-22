@@ -1,12 +1,11 @@
 <template>
 <div>
 	<!-- 导航头 -->
-	<x-header>
-	  <span>反馈列表</span>
+	<x-header>反馈列表<router-link slot="overwrite-left" to="/home">首页</router-link>
 	  <router-link to="/wxfkc" slot="right">+新建</router-link>
 	</x-header>
 	<!-- 搜索 -->
-	<search v-model="txt" @on-change="getdata" placeholder="搜索关键字"></search>
+	<search :autoFixed="false" v-model="txt" @on-change="getdata" placeholder="搜索关键字"></search>
 
 	<group :title="'共查到'+list.length+'条记录'">
 	  <cell v-for="v in list" :title="v.contxt" :link="'/wxfkr/'+v.id" is-link>

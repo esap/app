@@ -9,17 +9,26 @@ const  routes= [
   { path: '/', redirect: '/home' },
   { path: '/ddjd', component:require('@/components/ddjd') },
   { path: '/jcmx', component:require('@/components/jcmx') },
-  { path: '/xjdd', component:require('@/components/xjdd') },
   { path: '/eskc', component:require('@/components/eskc') },
   { path: '/dbsy', component:require('@/components/dbsy') },
 
   { path: '/wxfkl', component:require('@/components/wxfk/wxfkL') },
   { path: '/wxfkr/:id', component:require('@/components/wxfk/wxfkR') },
   { path: '/wxfkc', component:require('@/components/wxfk/wxfkC') },
+ 
+  { path: '/xsddl', component:require('@/components/xsdd/xsddL') },
+  { path: '/xsddr/:id', component:require('@/components/xsdd/xsddR') },
+  { path: '/xsddc', component:require('@/components/xsdd/xsddC') },
 
   { path: '/cgddl', component:require('@/components/cgdd/cgddL') },
   { path: '/cgddr/:id', component:require('@/components/cgdd/cgddR') },
   { path: '/cgddc', component:require('@/components/cgdd/cgddC') },
+
+  { path: '/lldl', component:require('@/components/lld/lldL') },
+  { path: '/lldc/:id', component:require('@/components/lld/lldC') },
+
+  { path: '/cgrkl', component:require('@/components/cgrk/cgrkL') },
+  { path: '/cgrkc/:id', component:require('@/components/cgrk/cgrkC') },
 
   { path: '/me', component:require('@/components/me') },
   { path: '*', redirect: '/home' }

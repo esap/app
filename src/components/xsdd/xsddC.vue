@@ -1,10 +1,10 @@
 <template>
 <div>
   <!-- 导航头 -->
-  <x-header>新建采购订单</x-header>
+  <x-header>新建销售订单</x-header>
 
   <group title="合同">
-    <popup-picker title="供应商" show-name :data="dataList" v-model="form.vid" @on-show="getInfo" placeholder="请选择供应商"></popup-picker>
+    <popup-picker title="客户" show-name :data="dataList" v-model="form.cid" @on-show="getInfo" placeholder="请选择客户"></popup-picker>
     <datetime v-model="form.cdate" required placeholder="选择签订日期" :start-date="new Date().toString()" title="签订日期"></datetime>
     <datetime v-model="form.ddate" required placeholder="选择交货日期" :start-date="new Date().toString()" title="交货日期"></datetime>
   </group>
@@ -30,7 +30,7 @@ export default {
   components: { XHeader, XButton, XTextarea, XSwitch, Group, XInput, Datetime, footbar, XNumber, PopupPicker },
   data() {
     return {
-  		form: {vid:[]},
+  		form: {cid:[]},
       list:[{mid:[],qty:0}],
       dataList:[['']],
       dataList2:[['']],
@@ -48,12 +48,12 @@ export default {
   methods: {
   	sbmt() {
       this.form['data']=this.list
-  		this.$http.post(this.$store.state.esPath+"MM_采购订单", this.form)
+  		this.$http.post(this.$store.state.esPath+"SD_销售订单", this.form)
       .then(r=> {	
         if (r.data.result) {          
           this.done = true
           this.$vux.toast.show({ text: '提交成功', type: 'success', time: 2000 })
-          setTimeout(() => { this.$router.push("/cgddl"); }, 2000)
+          setTimeout(() => { this.$router.push("/xsddl"); }, 2000)
         }	else{
           this.$vux.toast.show({ text: '提交失败:'+errmsg, type: 'cancel', time: 2000 })	
           this.done = false	
@@ -62,7 +62,7 @@ export default {
       .catch(e => { console.log(e) });			
   	},
     getInfo() {
-      this.$http.get(this.$store.state.api2Path+"供应商?s=''")
+      this.$http.get(this.$store.state.api2Path+"客户?s=''")
       .then(r=> { if (r.data.result) this.dataList=r.data.data })
       .catch(e => { console.log(e) }) 
     },
@@ -73,7 +73,7 @@ export default {
     },
   },
   activated(){
-  	this.form= {vid:[]},
+  	this.form= {cid:[]},
     this.list=[{mid:[],qty:0}],
   	this.done=false
   }

@@ -3,7 +3,7 @@
 	<!-- 导航头 -->
 	<x-header>订单进度查询</x-header>
 	<!-- 搜索 -->
-	<search v-model="txt" @on-change="getdata" placeholder="搜索单号(未开放)"></search>
+	<search :autoFixed="false" v-model="txt" @on-change="getdata" placeholder="搜索单号(未开放)"></search>
 
 	<group :title="'共查到'+list.length+'条记录'">
 	  <cell v-for="v in list" is-link>

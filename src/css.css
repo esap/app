@@ -82,3 +82,12 @@
 .toggle-cart-enter, .toggle-cart-leave-active {
     transform: translateY(100%);
 }
+
+.default-x-icon {
+	display: block;
+  	fill: green;
+}
+.red-x-icon {
+	display: block;
+  	fill: red;
+}

@@ -1,13 +1,13 @@
 <template>
 <div>
 	<!-- 导航头 -->
-	<x-header>采购订单详情</x-header>
+	<x-header>销售订单详情</x-header>
 
-	<group :title="'订单'+form.id">
-	  <cell title="供应商">{{form.供方}}</cell>
+	<group title="主表">
+	  <cell title="客户">{{form.需方}}({{form.需代表}})</cell>
 	  <cell title="签订日期">
 		<div slot="after-title" class="lastRe">{{form.日期}}</div>
-	    {{ form.需代表 }}	
+	    {{ form.供代表 }}	
 	  </cell>
 	  <cell title="交期">{{ form.交期 }}</cell>
 	</group>

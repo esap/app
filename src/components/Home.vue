@@ -22,8 +22,8 @@
 	    <img slot="icon" src="../assets/icon_nav_button.png">
 	    <span slot="label">首页</span>
 	  </tabbar-item>
-	  <tabbar-item :badge="String(cnt)" link="/dbsy">
-	    <img slot="icon" src="../assets/icon_nav_msg.png">
+	  <tabbar-item :badge="cnt?String(cnt):''" link="/dbsy">
+	    <img slot="icon" src="../assets/icon_nav_icons.png">
 	    <span slot="label">待办</span>
 	  </tabbar-item>
 	  <tabbar-item link="https://esap.erp8.net">
@@ -58,13 +58,14 @@ export default {
 		  title: '向着诗和远方去吧'
 		}],
 		hd: [
-		  { path: "xjdd", name: "新建订单", nav: "article" },
+		  { path: "xsddl", name: "销售订单", nav: "article" },
 		  { path: "cgddl", name: "采购订单", nav: "panel" },
-		  { path: "jcmx", name: "进出明细", nav: "tab" },
 		  { path: "eskc", name: "库存查询", nav: "search_bar" },
+		  { path: "lldl", name: "销售出货", nav: "msg" },
+		  { path: "cgrkl", name: "采购入库", nav: "toast" },
+		  { path: "jcmx", name: "进出明细", nav: "tab" },
 		  { path: "ddjd", name: "订单进度", nav: "progress" },
 		  { path: "wxfkl", name: "意见反馈", nav: "dialog" },
-		  { path: "/", name: "尚未开放", nav: "actionSheet" },
 		  { path: "/", name: "尚未开放", nav: "actionSheet" },
 		],
 		cnt:0
@@ -80,7 +81,7 @@ export default {
 		return require('../assets/icon_nav_' + v.nav + '.png')
 	},
 	getCnt() {
-		this.$http.get(this.$store.state.apiPath+'dbsyCnt')
+		this.$http.get(this.$store.state.apiPath+'dbsyCnt?user='+this.userName)
 		.then(r => { this.cnt=r.data[0].cnt })
 		.catch(e => { console.log(e) })
 	}

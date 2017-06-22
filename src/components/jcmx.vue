@@ -10,7 +10,7 @@
 		  <div>{{v.品名}}</div>
 		  <span>{{v.日期}}</span>
 	    </div>
-	    <span slot="value" class="font-pink">{{v.数}}</span>
+	    <span class="font-pink">{{v.数}}</span>
 	  </cell>
 	</group>
 
@@ -34,7 +34,7 @@ export default {
   methods: {
   	getInfo(v) {
   		this.$http.get(this.$store.state.apiPath+"vIO")
-  		.then(r=> {	if (r.data.result) this.list=r.data.data[0]	})
+  		.then(r=> {	if (r.data.length) this.list=r.data })
   		.catch(e => { console.log(e) })	
   	},	
   },

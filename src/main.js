@@ -12,7 +12,7 @@ Vue.prototype.$cookie=cookie
 Vue.use(AjaxPlugin)
 Vue.use(ToastPlugin)
 
-FastClick.attach(document.body)
+// FastClick.attach(document.body)
 
 Vue.config.productionTip = false
 
