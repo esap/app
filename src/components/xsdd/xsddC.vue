@@ -12,7 +12,7 @@
 
   <group v-for="v,k in list" :title="'明细'+(k+1)">   
     <popup-picker title="商品名称" show-name :data="dataList2" v-model="v.mid" @on-show="getInfo2" placeholder="请选择商品名称"></popup-picker>
-    <x-number title="数量" :min=0 v-model="v.qty"></x-number>
+    <x-number title="数量" fillable :min=0 v-model="v.qty"></x-number>
     <x-button v-if="itemCount>1" mini @click.native="list.splice(k,1)"><x-icon type="ios-minus" class="red-x-icon"></x-icon></x-button>
   </group>
   
