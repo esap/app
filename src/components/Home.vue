@@ -25,11 +25,7 @@
 	  <tabbar-item :badge="cnt?String(cnt):''" link="/dbsy">
 	    <img slot="icon" src="../assets/icon_nav_icons.png">
 	    <span slot="label">待办</span>
-	  </tabbar-item>
-	  <tabbar-item link="https://esap.erp8.net">
-	    <img slot="icon" src="../assets/icon_nav_article.png">
-	    <span slot="label">官网</span>
-	  </tabbar-item>
+	  </tabbar-item>	 
 	  <tabbar-item :badge="!!userName?'':'1'" link="/me">
 	    <img slot="icon" src="../assets/icon_nav_cell.png">
 	    <span slot="label">账号</span>
@@ -65,8 +61,8 @@ export default {
 		  { path: "cgrkl", name: "采购入库", nav: "toast" },
 		  { path: "jcmx", name: "进出明细", nav: "tab" },
 		  { path: "ddjd", name: "订单进度", nav: "progress" },
+		  { path: "wxwkl", name: "微信文库", nav: "article" },
 		  { path: "wxfkl", name: "意见反馈", nav: "dialog" },
-		  { path: "/", name: "尚未开放", nav: "actionSheet" },
 		],
 		cnt:0
     }

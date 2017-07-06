@@ -54,6 +54,11 @@
 	color: #999;
 }
 
+.grey {
+	font-size: 10px;
+	color:grey;
+}
+
 .fade-enter-active, .fade-leave-active {
     transition: opacity .5s;
 }

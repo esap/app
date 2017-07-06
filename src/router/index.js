@@ -12,6 +12,10 @@ const  routes= [
   { path: '/eskc', component:require('@/components/eskc') },
   { path: '/dbsy', component:require('@/components/dbsy') },
 
+  { path: '/wxwkl', component:require('@/components/wxwk/wxwkl') },
+  { path: '/wxwkll/:id', component:require('@/components/wxwk/wxwkll') },
+  { path: '/wxwklll/:id/:sid', component:require('@/components/wxwk/wxwklll') },
+
   { path: '/wxfkl', component:require('@/components/wxfk/wxfkL') },
   { path: '/wxfkr/:id', component:require('@/components/wxfk/wxfkR') },
   { path: '/wxfkc', component:require('@/components/wxfk/wxfkC') },
