@@ -1,14 +1,14 @@
 <template>
 <div>
-<!--   <div style="text-align:center;padding:10px">
+  <div style="text-align:center;padding:10px">
     <img src="../assets/logo.png" style="width:100px" />
-  </div> -->
-  <swiper :list="swiperList" auto 
+  </div>
+<!--   <swiper :list="swiperList" auto 
     style="width:100%;margin:0 auto;" 
     height="150px" 
     dots-class="custom-bottom" 
     dots-position="center">
-  </swiper>
+  </swiper> -->
 
   <group>
 	<grid>
@@ -40,19 +40,19 @@ export default {
   components: { Swiper, SwiperItem, Group, Grid, GridItem, XHeader, Tabbar, TabbarItem },
   data () {
     return {
-    	swiperList:[{
-		  url: 'javascript:',
-		  img: 'https://static.vux.li/demo/1.jpg',
-		  title: '在鲜花盛开的季节'
-		}, {
-		  url: 'javascript:',
-		  img: 'https://static.vux.li/demo/2.jpg',
-		  title: '驾着车踏上旅程'
-		}, {
-		  url: 'javascript:',
-		  img: 'https://static.vux.li/demo/3.jpg',
-		  title: '向着诗和远方去吧'
-		}],
+  //   	swiperList:[{
+		//   url: 'javascript:',
+		//   img: 'https://static.vux.li/demo/1.jpg',
+		//   title: '在鲜花盛开的季节'
+		// }, {
+		//   url: 'javascript:',
+		//   img: 'https://static.vux.li/demo/2.jpg',
+		//   title: '驾着车踏上旅程'
+		// }, {
+		//   url: 'javascript:',
+		//   img: 'https://static.vux.li/demo/3.jpg',
+		//   title: '向着诗和远方去吧'
+		// }],
 		hd: [
 		  { path: "xsddl", name: "销售订单", nav: "article" },
 		  { path: "cgddl", name: "采购订单", nav: "panel" },
