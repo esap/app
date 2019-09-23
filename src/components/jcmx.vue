@@ -33,7 +33,7 @@ export default {
   },
   methods: {
   	getInfo(v) {
-  		this.$http.get(this.$store.state.apiPath+"vIO")
+  		this.$http.get(this.$store.state.apiPath+"vIO?db=esap2")
   		.then(r=> {	if (r.data.length) this.list=r.data })
   		.catch(e => { console.log(e) })	
   	},	

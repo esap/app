@@ -28,7 +28,7 @@ export default {
   	getdata: debounce(()=>{this.refresh()},500),
 	refresh() {
 		this.$http.get(this.$store.state.apiPath+'app.未到采购?s=' + this.txt)
-		.then(r => { this.list=r.data })
+		.then(r => { this.list=r.data.data[0] })
 		.catch(e => { console.log(e) })
 	}
   },

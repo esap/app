@@ -28,8 +28,8 @@ export default {
   methods: {
 	getdata: debounce(function() {
 		if (!this.txt) return
-		this.$http.get(this.$store.state.apiPath+'vlbq?w=名&o=属性&s=' + this.txt)
-		.then(r => { if (r.data.length) this.list=r.data })
+		this.$http.get(this.$store.state.apiPath+'vlbq?db=esap2&w=名&o=属性&s=' + this.txt)
+		.then(r => { this.list=r.data.data[0] })
 		.catch(e => { console.log(e) })
 	},500),
 	getMsg(v) {

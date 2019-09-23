@@ -42,16 +42,16 @@ export default {
     return {
     	swiperList:[{
 		  url: 'javascript:',
-		  img: 'https://static.vux.li/demo/1.jpg',
-		  title: '在鲜花盛开的季节'
+		  img: 'https://erp8.net/img/es3-2.jpg',
+		  title: 'CRM系统上线'
 		}, {
 		  url: 'javascript:',
-		  img: 'https://static.vux.li/demo/2.jpg',
-		  title: '驾着车踏上旅程'
+		  img: 'https://erp8.net/img/es3-7.jpg',
+		  title: 'SCM系统上线'
 		}, {
 		  url: 'javascript:',
-		  img: 'https://static.vux.li/demo/3.jpg',
-		  title: '向着诗和远方去吧'
+		  img: 'https://erp8.net/img/es3-11.jpg',
+		  title: 'MRP系统上线'
 		}],
 		hd: [
 		  { path: "xsddl", name: "销售订单", nav: "article" },
